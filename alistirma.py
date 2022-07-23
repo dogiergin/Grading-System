@@ -1,4 +1,5 @@
 from openpyxl import Workbook, load_workbook
+import pandas as pd
 
 file_name = ("matematik.xlsx")
 yeni_workbook = Workbook()
@@ -72,7 +73,8 @@ while True:
             except(ValueError, KeyError):
                 print('yanlış değer veya listede değer yok girdiniz başa döndürülüyorsunuz')
         elif a == 3:
-            print('excel')
+            df=pd.DataFrame(users_data)
+            df.to_excel('çıktı.xlsx')
             break
     except ValueError:
         break
